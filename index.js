@@ -26,7 +26,6 @@ client.on('messageCreate', async msg => {
   if (msg.author.bot) return;
   const raw = msg.content.trim();
 
-  // 1) 英文通用策略 !strategy
   if (raw === '!strategy') {
     const embed = new EmbedBuilder()
       .setTitle('Common abyss strategy')
@@ -44,7 +43,7 @@ client.on('messageCreate', async msg => {
     return msg.channel.send({ embeds: [embed] });
   }
 
-  // 2) 中文通用攻略 !攻略
+
   if (raw === '!攻略') {
     const embed = new EmbedBuilder()
       .setTitle('通用深淵攻略')
@@ -83,7 +82,7 @@ client.on('messageCreate', async msg => {
   }
   
 
-  // 3) 数字命令 
+
   const m = raw.match(/^!(\d+)(?:\s*(en|cn|jp))?$/i);
   if (m) {
     const key  = m[1];                    // 层数
@@ -123,7 +122,7 @@ client.on('messageCreate', async msg => {
           link: 'https://discord.com/channels/1082595320074092574/1381483438640730242/1382585667321597963'
         }
       }
-      // 以后要加 59、60 直接在这里按格式补就行
+   
     };
 
     const cfg = strategies[key]?.[lang];
